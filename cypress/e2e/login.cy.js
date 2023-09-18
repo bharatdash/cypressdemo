@@ -22,7 +22,6 @@ describe('Verify Login Page', function() {
   it('Verify the user can login with correct password', () => {
     cy.VerifyURL(data.url)
     loginPage.loginToApp(data.username, data.password);
-    //cy.get("a.nav-link").contains("Logout").click();
     cy.Logout();
   });
 
