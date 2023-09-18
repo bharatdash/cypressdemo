@@ -4,7 +4,14 @@
   "description": "This is Demo project for Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy.run": "cypress run",
+    "cy.open": "cypress open",
+    "cy.headed": "npm run cy.run -- --headed",
+    "cy.chrome": "npm run cy.run -- --browser chrome --headed",
+    "cy.reporter": "npm run cy.run --reporter mochawesome",
+    "cy.dashBoardAndReporter": "npm run cy.run -- --record --key 48509d17-eb1e-4d1f-9ae8-f92377e7d17b --reporter mochawesome",
+    "cy.dashBoard": "npx cypress run --record --key 48509d17-eb1e-4d1f-9ae8-f92377e7d17b",
+    "cy.env": "cypress run --config pageLoadTimeout=100000,watchForFileChanges=false"
   },
   "repository": {
     "type": "git",
@@ -23,6 +30,10 @@
   },
   "homepage": "https://github.com/bharatdash/cypressdemo#readme",
   "devDependencies": {
-    "cypress": "^13.2.0"
+    "cypress": "^13.2.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
