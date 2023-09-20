@@ -6,12 +6,20 @@ class LoginPage{
         password : () => cy.get("#Password"),
         loginBtn : () => cy.get("button[type='submit']"),
         emailError : () => cy.get("#Email-error"),
+        usernameOH : () => cy.get("input[placeholder='Username']"),
+        passwordOH : () => cy.get("input[placeholder='Password']"),
     }
 
     //Functions
     loginToApp(email, password){
         this.elements.username().clear().type(email);
         this.elements.password().clear().type(password);
+        this.elements.loginBtn().click();
+    }
+
+    loginToOrangeHRM(email, password){
+        this.elements.usernameOH().clear().type(email);
+        this.elements.passwordOH().clear().type(password);
         this.elements.loginBtn().click();
     }
 
