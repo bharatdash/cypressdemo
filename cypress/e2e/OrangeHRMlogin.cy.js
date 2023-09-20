@@ -16,12 +16,13 @@ describe('Verify Login Page', function() {
   it("Verify admin Login with Invalid credential", () => {
     cy.VerifyURL(data.orangeHrmURL)
     LoginPage.loginToOrangeHRM("invalidUser", "InvalidPassword");
-    
+    LoginPage.verifyValidationErrorOnHRMLogin("Invalid credentials")
   });
 
   it('Verify the user can login with correct password', () => {
     cy.VerifyURL(data.orangeHrmURL)
     LoginPage.loginToOrangeHRM(data.OHusername, data.OHpassword);
+    cy.CRMLogout();
   });
 
 })

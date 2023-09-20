@@ -31,10 +31,17 @@
 }); */
 
 Cypress.Commands.add('VerifyURL', (url) => {
-    cy.url().should('eq',url)
+    cy.url().should('eq', url)
 });
 
 Cypress.Commands.add('Logout', () => {
     cy.get("a.nav-link").contains("Logout").click();
     cy.get("button[type='submit']").should('be.visible');
+});
+
+Cypress.Commands.add('CRMLogout', () => {
+    cy.get(".bi-caret-down-fill").click();
+    cy.wait(1000);
+    cy.get("[Role='menuitem']").should('have.length', 4);
+    cy.get("[Role='menuitem']").contains('Logout').click();
 });

@@ -8,6 +8,8 @@ class LoginPage{
         emailError : () => cy.get("#Email-error"),
         usernameOH : () => cy.get("input[placeholder='Username']"),
         passwordOH : () => cy.get("input[placeholder='Password']"),
+        errorMsgOnLogin : () => cy.get("p.oxd-alert-content-text"),
+        spinner : () => cy.get(".oxd-loading-spinner")
     }
 
     //Functions
@@ -21,6 +23,7 @@ class LoginPage{
         this.elements.usernameOH().clear().type(email);
         this.elements.passwordOH().clear().type(password);
         this.elements.loginBtn().click();
+        this.elements.spinner().should('not.exist');
     }
 
     verifyValidationError() {
@@ -29,6 +32,10 @@ class LoginPage{
         this.elements.emailError().should("have.text", "Please enter your email");
         this.elements.username().type('invalidEmailFormat');
         this.elements.emailError().should("have.text", "Wrong email");
+    }
+
+    verifyValidationErrorOnHRMLogin(msg) { 
+        this.elements.errorMsgOnLogin().should("have.text", msg);
     }
 
 }
