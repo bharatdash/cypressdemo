@@ -6,6 +6,9 @@ class LoginPage{
         password : () => cy.get("#Password"),
         loginBtn : () => cy.get("button[type='submit']"),
         emailError : () => cy.get("#Email-error"),
+        loginUnsuccessfulMsg : () => cy.get(".message-error"),
+        
+        //Orange HRM locators here
         usernameOH : () => cy.get("input[placeholder='Username']"),
         passwordOH : () => cy.get("input[placeholder='Password']"),
         errorMsgOnLogin : () => cy.get("p.oxd-alert-content-text"),
@@ -32,6 +35,10 @@ class LoginPage{
         this.elements.emailError().should("have.text", "Please enter your email");
         this.elements.username().type('invalidEmailFormat');
         this.elements.emailError().should("have.text", "Wrong email");
+    }
+
+    verifyLoginUnsuccessfulError() {
+        this.elements.loginUnsuccessfulMsg().should('contain','Login was unsuccessful. Please correct the errors and try again.');
     }
 
     verifyValidationErrorOnHRMLogin(msg) { 
