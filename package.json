@@ -4,14 +4,15 @@
   "description": "This is Demo project for Cypress",
   "main": "index.js",
   "scripts": {
-    "cy.run": "cypress run",
-    "cy.open": "cypress open",
-    "cy.headed": "npm run cy.run -- --headed",
-    "cy.chrome": "npm run cy.run -- --browser chrome --headed",
-    "cy.reporter": "npm run cy.run --reporter mochawesome",
-    "cy.dashBoardAndReporter": "npm run cy.run -- --record --key 48509d17-eb1e-4d1f-9ae8-f92377e7d17b --reporter mochawesome",
-    "cy.dashBoard": "npx cypress run --record --key 48509d17-eb1e-4d1f-9ae8-f92377e7d17b",
-    "cy.env": "cypress run --config pageLoadTimeout=100000,watchForFileChanges=false"
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "cy:headed": "npm run cy.run -- --headed",
+    "cy:chrome": "npm run cy.run -- --browser chrome --headed",
+    "cy:chrome:spec": "npm run cy:run -- --browser chrome --headed --spec './cypress/e2e/verifyCustomerPage.cy.js'",
+    "cy:reporter": "npm run cy:run --reporter mochawesome",
+    "cy:dashBoardAndReporter": "npm run cy:run -- --record --key 48509d17-eb1e-4d1f-9ae8-f92377e7d17b --reporter mochawesome",
+    "cy:dashBoard": "npx cypress run --record --key 48509d17-eb1e-4d1f-9ae8-f92377e7d17b",
+    "cy:env": "cypress run --config pageLoadTimeout=100000,watchForFileChanges=false"
   },
   "repository": {
     "type": "git",

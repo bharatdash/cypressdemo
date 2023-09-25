@@ -17,6 +17,7 @@ class LoginPage{
 
     //Functions
     loginToApp(email, password){
+        cy.visit('/')
         this.elements.username().clear().type(email);
         this.elements.password().clear().type(password);
         this.elements.loginBtn().click();
@@ -35,6 +36,10 @@ class LoginPage{
         this.elements.emailError().should("have.text", "Please enter your email");
         this.elements.username().type('invalidEmailFormat');
         this.elements.emailError().should("have.text", "Wrong email");
+    }
+
+    verifyUnsuccessfulLogin() {
+        this.elements.loginUnsuccessfulMsg().should('contain', 'Login was unsuccessful. Please correct the errors and try again.');
     }
 
     verifyLoginUnsuccessfulError() {
