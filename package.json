@@ -1,6 +1,6 @@
 {
   "name": "cypressdemo",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This is Demo project for Cypress",
   "main": "index.js",
   "scripts": {
