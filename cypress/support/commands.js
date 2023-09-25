@@ -36,17 +36,17 @@ Cypress.Commands.add('VerifyURL', (url) => {
 
 Cypress.Commands.add('LoginSession', (username, password) => {
     cy.session([username, password], () => {
-      cy.visit('/')
-      cy.get('#Email').clear().type(username)
-      cy.get("#Password").clear().type(password)
-      cy.get("button[type='submit']").click();
-      cy.url().should('contain', '/admin')
-    },{
-      validate() {
-        cy.request('/whoami').its('status').should('eq', 200)
-      }
+        cy.visit('/')
+        cy.get('#Email').clear().type(username)
+        cy.get("#Password").clear().type(password)
+        cy.get("button[type='submit']").click();
+        cy.url().should('contain', '/admin')
+    }, {
+        validate() {
+            cy.request('/whoami').its('status').should('eq', 200)
+        }
     })
-  })
+})
 
 Cypress.Commands.add('Logout', () => {
     //cy.get('#ajaxBusy').should('have.css', 'display', 'none');
