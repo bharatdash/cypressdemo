@@ -18,6 +18,13 @@ class CustomerPage {
             expect(list).to.deep.equal(fixtureData.customerOptions)
         });
     }
+
+    selectACustomerOptions (option) {
+        cy.get(".sidebar ul[role=menu]")
+        .children("li[class^='nav-item has']")
+        .contains('Customer').next('ul').find('li').contains(`${option}`)
+        .click({force: true});
+    }
     
 }
 export default new CustomerPage(); //What is default
