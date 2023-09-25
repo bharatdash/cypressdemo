@@ -16,7 +16,7 @@ module.exports = defineConfig({
     },
     baseUrl: "https://admin-demo.nopcommerce.com",
     include:["cypress/**/*.js"], //Which tests to include in the test runners list
-    defaultCommandTimeout: 8000, //to wait until most DOM based commands are considered timed out. Defaul 4000
+    defaultCommandTimeout: 4000, //to wait until most DOM based commands are considered timed out. Defaul 4000
     pageLoadTimeout: 120000, //Time, in milliseconds, to wait for page transition events Default 60000
     requestTimeout: 10000,
     responseTimeout : 60000,
