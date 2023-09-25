@@ -48,6 +48,12 @@ Cypress.Commands.add('LoginSession', (username, password) => {
     })
 })
 
+Cypress.Commands.add('SelectATab', (tabName) => {
+    cy.get(".sidebar ul[role=menu]")
+    .children("li[class^='nav-item']")
+    .contains(`${tabName}`).click({force: true})
+});
+
 Cypress.Commands.add('Logout', () => {
     //cy.get('#ajaxBusy').should('have.css', 'display', 'none');
     cy.get("a.nav-link").contains("Logout").click();

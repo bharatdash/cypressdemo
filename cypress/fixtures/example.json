@@ -1,8 +1,9 @@
 {
+  "OHusername": "Admin",
+  "OHpassword": "admin123",
   "url": "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F",
   "username": "admin@yourstore.com",
   "password": "admin",
   "orangeHrmURL" : "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-  "OHusername": "Admin",
-  "OHpassword": "admin123"
+  "customerOptions": ["Customers", "Customer roles", "Online customers", "Vendors", "Activity log", "Activity Types", "GDPR requests (log)"]
 }
