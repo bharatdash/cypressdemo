@@ -24,12 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-/* Cypress.Commands.add('LoginAsAdmin',(email,password)=>{
-    cy.get('#Email').clear().type(email);
-    cy.get('#Password').clear().type(password);
-    cy.get("button[type='submit']").click();
-}); */
-
 Cypress.Commands.add('VerifyURL', (url) => {
     cy.url().should('eq', url)
 });
