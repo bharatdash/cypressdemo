@@ -22,6 +22,7 @@ describe('Verify Login Page', function() {
   it('Verify the user can login with correct password', () => {
     cy.VerifyURL(data.orangeHrmURL)
     LoginPage.loginToOrangeHRM(data.OHusername, data.OHpassword);
+    LoginPage.printUserName();
     cy.CRMLogout();
   });
 

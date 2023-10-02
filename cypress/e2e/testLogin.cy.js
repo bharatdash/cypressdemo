@@ -1,6 +1,6 @@
 import LoginPage from "./pageObject/loginPage";
 
-describe('Verify Login Page', function() {
+describe('Verify Login Page', function () {
   let data;
   before(() => {
     cy.fixture('example').then(function (fdata) {
